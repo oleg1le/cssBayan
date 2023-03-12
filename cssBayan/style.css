@@ -70,3 +70,36 @@ img {
 .meme__name input:checked~.meme__img {
   max-height: 100%;
 }
+
+.meme__name label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+}
+
+.meme__name input[type=checkbox]+label::after {
+  content: ">";
+  transform: rotate(90deg);
+}
+
+.meme__name input[type=checkbox]:checked+label::after {
+  transform: rotate(270deg);
+}
+
+.meme__name input[type=radio]:checked+label::after {
+  transform: rotateX(180deg);
+}
+
+@media (min-width: 320px) {
+  img {
+    width: 80vw;
+  }
+}
